@@ -63,6 +63,7 @@ const details: Record<string, { intro: string; bullets: string[]; best: string }
 };
 
 export const Route = createFileRoute("/services/$slug")({
+  staticData: { sitemap: true },
   loader: ({ params }) => {
     const service = services.find((s) => s.slug === params.slug);
     if (!service) throw notFound();

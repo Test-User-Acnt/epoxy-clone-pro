@@ -47,6 +47,7 @@ const faqs = [
 ];
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Epoxy Flooring Vancouver | Garage & Shop Floors | Go2Epoxy" },

@@ -5,6 +5,7 @@ import { CtaBand } from "@/components/CtaBand";
 import { serviceAreas } from "@/lib/site";
 
 export const Route = createFileRoute("/service-areas")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Service Areas | Epoxy Flooring Across Metro Vancouver" },

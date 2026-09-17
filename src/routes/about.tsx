@@ -6,6 +6,7 @@ import installer from "@/assets/installer.jpg";
 import flake from "@/assets/flake-epoxy.jpg";
 
 export const Route = createFileRoute("/about")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "About Go2Epoxy | Vancouver Epoxy Flooring Team" },
