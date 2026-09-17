@@ -106,6 +106,11 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const firstReview = reviews[0];
+  const secondReview = reviews[1];
+
+  if (!firstReview || !secondReview) return null;
+
   return (
     <>
       <Header />
@@ -193,8 +198,8 @@ function Home() {
         <section className="border-y border-primary/25 bg-background py-20">
           <div className="mx-auto grid max-w-[1170px] items-center gap-12 px-5 md:grid-cols-2">
             <figure className="order-2 border-l border-primary/40 pl-8 md:order-1">
-              <blockquote className="text-lg leading-8 text-muted-foreground">“{reviews[0].text}”</blockquote>
-              <figcaption className="mt-6 text-sm font-bold text-foreground">{reviews[0].name} <span className="font-normal text-muted-foreground">— {reviews[0].location}</span></figcaption>
+              <blockquote className="text-lg leading-8 text-muted-foreground">“{firstReview.text}”</blockquote>
+              <figcaption className="mt-6 text-sm font-bold text-foreground">{firstReview.name} <span className="font-normal text-muted-foreground">— {firstReview.location}</span></figcaption>
               <div className="mt-2 text-primary">★★★★★</div>
             </figure>
             <img src={metallic} alt="Luxury black metallic epoxy garage floor" className="order-1 h-[330px] w-full rounded-md object-cover md:order-2" loading="lazy" />
@@ -228,8 +233,8 @@ function Home() {
           <div className="mt-8 grid items-center gap-10 md:grid-cols-[1fr_1fr]">
             <img src={flake} alt="Completed Go2Epoxy garage floor" className="h-[330px] w-full rounded-md object-cover" loading="lazy" />
             <figure className="border-l border-primary/40 pl-8">
-              <blockquote className="text-base leading-7 text-muted-foreground">“{reviews[1].text}”</blockquote>
-              <figcaption className="mt-5 text-sm font-bold">{reviews[1].name}<span className="block text-xs font-normal text-muted-foreground">{reviews[1].location}</span></figcaption>
+              <blockquote className="text-base leading-7 text-muted-foreground">“{secondReview.text}”</blockquote>
+              <figcaption className="mt-5 text-sm font-bold">{secondReview.name}<span className="block text-xs font-normal text-muted-foreground">{secondReview.location}</span></figcaption>
               <div className="mt-2 text-primary">★★★★★</div>
             </figure>
           </div>
