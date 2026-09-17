@@ -16,6 +16,7 @@ const images: Record<string, string> = {
 };
 
 export const Route = createFileRoute("/services/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Epoxy Flooring Services in Vancouver | Go2Epoxy" },

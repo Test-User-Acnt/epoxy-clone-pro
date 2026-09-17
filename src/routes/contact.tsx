@@ -5,6 +5,7 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { site } from "@/lib/site";
 
 export const Route = createFileRoute("/contact")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Contact Go2Epoxy | Free Epoxy Flooring Quote in Vancouver" },

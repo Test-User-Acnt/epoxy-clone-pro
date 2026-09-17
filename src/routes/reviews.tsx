@@ -6,6 +6,7 @@ import { reviews } from "@/lib/reviews";
 import { site } from "@/lib/site";
 
 export const Route = createFileRoute("/reviews")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Customer Reviews | Go2Epoxy Vancouver Epoxy Flooring" },
