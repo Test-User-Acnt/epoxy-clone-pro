@@ -5,8 +5,8 @@ import { services, site } from "@/lib/site";
 export function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-[1.2fr_1fr_1fr]">
-        <div>
+      <div className="mx-auto grid max-w-[1170px] gap-10 px-5 py-14 md:grid-cols-[1.5fr_0.8fr_0.8fr]">
+        <div className="md:text-right">
           <Logo />
           <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
             <li>
@@ -42,8 +42,8 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-border py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} {site.name}. Epoxy flooring across Metro Vancouver.
+      <div className="border-t border-border py-5 text-center text-[10px] text-muted-foreground">
+        © {new Date().getFullYear()} {site.name}. Proudly serving Metro Vancouver.
       </div>
     </footer>
   );

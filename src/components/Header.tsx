@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { site } from "@/lib/site";
 
@@ -16,16 +17,16 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50">
-      <div className="bg-topbar py-2 text-center text-xs font-bold tracking-wide text-topbar-foreground">
+      <div className="bg-topbar py-1.5 text-center text-[10px] font-semibold text-topbar-foreground">
         GIVE US A CALL{" "}
         <a href={site.phoneHref} className="underline-offset-2 hover:underline">
           {site.phone}
         </a>
       </div>
       <div className="border-b border-border bg-surface/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+        <div className="mx-auto flex max-w-[1170px] items-center justify-between gap-4 px-5 py-4">
           <Logo />
-          <nav className="hidden items-center gap-7 text-sm font-medium lg:flex">
+           <nav className="hidden items-center gap-8 text-[12px] font-medium lg:flex">
             {nav.map((n) => (
               <Link
                 key={n.to}
@@ -40,7 +41,7 @@ export function Header() {
           <div className="flex items-center gap-2">
             <Link
               to="/contact"
-              className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 sm:inline-flex"
+              className="hidden rounded-full bg-primary px-6 py-3 text-[12px] font-bold text-primary-foreground transition hover:brightness-110 sm:inline-flex"
             >
               Let's Get Started
             </Link>
@@ -49,9 +50,9 @@ export function Header() {
               onClick={() => setOpen((v) => !v)}
               aria-label="Toggle menu"
               aria-expanded={open}
-              className="rounded-md border border-border px-3 py-2 text-sm lg:hidden"
+              className="grid size-10 place-items-center rounded-md border border-border lg:hidden"
             >
-              Menu
+              {open ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>

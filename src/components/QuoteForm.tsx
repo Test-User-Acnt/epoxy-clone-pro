@@ -10,17 +10,17 @@ export function QuoteForm({ heading = "Reach out for a Free Quote!" }: { heading
   }
 
   const field =
-    "w-full rounded-full border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none";
+    "w-full rounded-md border border-border bg-background/55 px-3 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none";
 
   return (
-    <div className="panel p-5 sm:p-6">
-      <h2 className="text-lg font-bold">{heading}</h2>
+    <div className="panel p-5 sm:p-7">
+      <h2 className="text-base font-bold">{heading}</h2>
       {sent ? (
         <p className="mt-4 text-sm text-muted-foreground">
           Thanks — your request was received. We usually reply within one business day.
         </p>
       ) : (
-        <form className="mt-4 grid gap-3 sm:grid-cols-2" onSubmit={onSubmit}>
+        <form className="mt-5 grid gap-x-3 gap-y-4 sm:grid-cols-2" onSubmit={onSubmit}>
           <div>
             <label className="eyebrow" htmlFor="qf-name">Name</label>
             <input id="qf-name" name="name" required placeholder="Your name" className={`mt-1 ${field}`} />
@@ -43,13 +43,13 @@ export function QuoteForm({ heading = "Reach out for a Free Quote!" }: { heading
               <option value="other">Something else</option>
             </select>
           </div>
-          <p className="sm:col-span-2 text-[11px] leading-relaxed text-muted-foreground">
+          <p className="sm:col-span-2 text-[9px] leading-relaxed text-muted-foreground">
             By submitting this form you agree that Go2Epoxy may contact you by phone, text or email
             about your request. Consent is not a condition of purchase.
           </p>
           <button
             type="submit"
-            className="sm:col-span-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+            className="sm:col-span-2 rounded-md bg-primary px-6 py-3 text-xs font-bold text-primary-foreground transition hover:brightness-110"
           >
             Get My Free Quote
           </button>
