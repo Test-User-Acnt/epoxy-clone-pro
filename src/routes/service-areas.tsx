@@ -8,22 +8,22 @@ export const Route = createFileRoute("/service-areas")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Service Areas | Epoxy Flooring Across Metro Vancouver" },
+      { title: "Service Areas | Epoxy Flooring Across Surrey BC" },
       {
         name: "description",
         content:
-          "Go2Epoxy installs epoxy and concrete coatings in Vancouver, Burnaby, Richmond, Surrey, Coquitlam, Langley, Abbotsford, and the North Shore.",
+          "Pacific Floors and Coatings installs epoxy and concrete coatings in Surrey, Burnaby, Richmond, Delta, Coquitlam, Langley, and Abbotsford.",
       },
-      { property: "og:title", content: "Service Areas | Go2Epoxy" },
+      { property: "og:title", content: "Service Areas | Pacific Floors and Coatings" },
       {
         property: "og:description",
-        content: "Epoxy flooring across Metro Vancouver and the Fraser Valley.",
+        content: "Epoxy flooring across Surrey, BC and the Fraser Valley.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/service-areas" },
+      { property: "og:url", content: "https://epoxy-clone-pro.lovable.app/service-areas" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/service-areas" }],
+    links: [{ rel: "canonical", href: "https://epoxy-clone-pro.lovable.app/service-areas" }],
   }),
   component: ServiceAreasPage,
 });
@@ -36,7 +36,7 @@ function ServiceAreasPage() {
         <section className="mx-auto max-w-4xl px-4 py-16">
           <p className="eyebrow">Local service areas</p>
           <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">
-            Serving Vancouver businesses and families
+            Serving Surrey businesses and families
           </h1>
           <ul className="mt-8 space-y-4 text-sm text-muted-foreground">
             <li>
@@ -50,7 +50,7 @@ function ServiceAreasPage() {
             </li>
             <li>
               <strong className="text-foreground">Regional coverage:</strong> we install across
-              Metro Vancouver, the North Shore, and throughout the Fraser Valley.
+               Surrey, BC and throughout the Fraser Valley.
             </li>
           </ul>
           <div className="mt-10 flex flex-wrap gap-2">

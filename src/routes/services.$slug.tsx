@@ -73,7 +73,7 @@ export const Route = createFileRoute("/services/$slug")({
     if (!loaderData) {
       return { meta: [{ title: "Service not found" }, { name: "robots", content: "noindex" }] };
     }
-    const title = `${loaderData.service.title} in Vancouver | Go2Epoxy`;
+    const title = `${loaderData.service.title} in Surrey BC | Pacific Floors and Coatings`;
     return {
       meta: [
         { title },
@@ -81,10 +81,10 @@ export const Route = createFileRoute("/services/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: loaderData.service.short },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/services/${params.slug}` },
+        { property: "og:url", content: `https://epoxy-clone-pro.lovable.app/services/${params.slug}` },
         { name: "twitter:card", content: "summary_large_image" },
       ],
-      links: [{ rel: "canonical", href: `/services/${params.slug}` }],
+      links: [{ rel: "canonical", href: `https://epoxy-clone-pro.lovable.app/services/${params.slug}` }],
       scripts: [
         {
           type: "application/ld+json",
@@ -93,8 +93,8 @@ export const Route = createFileRoute("/services/$slug")({
             "@type": "Service",
             name: loaderData.service.title,
             description: loaderData.service.short,
-            areaServed: "Metro Vancouver, British Columbia",
-            provider: { "@type": "LocalBusiness", name: "Go2Epoxy", telephone: "+1-778-707-7090" },
+            areaServed: "Surrey, British Columbia",
+            provider: { "@type": "LocalBusiness", name: "Pacific Floors and Coatings", telephone: "+1-236-878-3386" },
           }),
         },
       ],
@@ -105,7 +105,9 @@ export const Route = createFileRoute("/services/$slug")({
 
 function ServiceDetail() {
   const { service } = Route.useLoaderData();
-  const detail = details[service.slug]!;
+  const detail = details[service.slug];
+
+  if (!detail) return null;
 
   return (
     <>

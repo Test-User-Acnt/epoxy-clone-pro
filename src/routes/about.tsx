@@ -9,22 +9,22 @@ export const Route = createFileRoute("/about")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "About Go2Epoxy | Vancouver Epoxy Flooring Team" },
+      { title: "About Pacific Floors and Coatings | Surrey BC Epoxy Team" },
       {
         name: "description",
         content:
-          "Go2Epoxy provides premium epoxy flooring and concrete coating for homeowners and businesses across Metro Vancouver and the Fraser Valley.",
+          "Pacific Floors and Coatings provides premium epoxy flooring and concrete coating for homeowners and businesses across Surrey, BC and the Fraser Valley.",
       },
-      { property: "og:title", content: "About Go2Epoxy" },
+      { property: "og:title", content: "About Pacific Floors and Coatings" },
       {
         property: "og:description",
-        content: "Premium custom flooring across Vancouver, built on preparation and clear communication.",
+        content: "Premium custom flooring across Surrey, BC, built on preparation and clear communication.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://epoxy-clone-pro.lovable.app/about" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://epoxy-clone-pro.lovable.app/about" }],
   }),
   component: About,
 });
@@ -35,13 +35,13 @@ function About() {
       <Header />
       <main>
         <section className="mx-auto max-w-4xl px-4 py-16 text-center">
-          <p className="eyebrow">Get to know Go2Epoxy</p>
+          <p className="eyebrow">Get to know Pacific Floors and Coatings</p>
           <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">
-            Premium custom flooring across Vancouver
+            Premium custom flooring across Surrey, BC
           </h1>
           <p className="mt-5 text-muted-foreground">
             We provide epoxy flooring and concrete coating services for homeowners and businesses
-            across Metro Vancouver and the Fraser Valley. Built on quality work and clear
+            across Surrey, BC and the Fraser Valley. Built on quality work and clear
             communication, we make upgrading your floors a stress-free experience.
           </p>
         </section>
@@ -49,7 +49,7 @@ function About() {
         <section className="mx-auto grid max-w-6xl gap-8 px-4 pb-16 md:grid-cols-2">
           <img
             src={installer}
-            alt="Go2Epoxy installer preparing a floor"
+            alt="Pacific Floors and Coatings installer preparing a floor"
             loading="lazy"
             width={1400}
             height={900}
@@ -97,7 +97,7 @@ function About() {
           </div>
           <img
             src={flake}
-            alt="Finished flake epoxy floor in a Vancouver basement"
+            alt="Finished flake epoxy floor in a Surrey basement"
             loading="lazy"
             width={1200}
             height={800}

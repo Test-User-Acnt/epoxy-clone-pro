@@ -19,22 +19,22 @@ export const Route = createFileRoute("/services/")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Epoxy Flooring Services in Vancouver | Go2Epoxy" },
+      { title: "Epoxy Flooring Services in Surrey BC | Pacific Floors and Coatings" },
       {
         name: "description",
         content:
-          "Metallic, flake, solid, and clear epoxy flooring systems for garages, warehouses, and retail showrooms across Metro Vancouver and the Fraser Valley.",
+          "Metallic, flake, solid, and clear epoxy flooring systems for garages, warehouses, and showrooms across Surrey, BC and the Fraser Valley.",
       },
-      { property: "og:title", content: "Epoxy Flooring Services | Go2Epoxy" },
+      { property: "og:title", content: "Epoxy Flooring Services | Pacific Floors and Coatings" },
       {
         property: "og:description",
-        content: "Your go-to custom flooring solutions across Metro Vancouver and the Fraser Valley.",
+        content: "Your go-to custom flooring solutions across Surrey, BC and the Fraser Valley.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: "https://epoxy-clone-pro.lovable.app/services" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "https://epoxy-clone-pro.lovable.app/services" }],
   }),
   component: ServicesPage,
 });
@@ -50,8 +50,8 @@ function ServicesPage() {
             Your go-to custom flooring solutions
           </h1>
           <p className="mt-5 text-muted-foreground">
-            From garage floors to industrial warehouses and retail showrooms, Go2Epoxy installs
-            metallic, flake, solid, and clear epoxy systems built for Metro Vancouver and the Fraser
+            From garage floors to industrial warehouses and retail showrooms, Pacific Floors and Coatings installs
+            metallic, flake, solid, and clear epoxy systems built for Surrey, BC and the Fraser
             Valley.
           </p>
         </section>
@@ -82,7 +82,7 @@ function ServicesPage() {
 
         <section className="mx-auto grid max-w-6xl gap-8 px-4 pb-20 md:grid-cols-2">
           <h2 className="text-3xl font-extrabold">
-            Trusted by home and business owners across Vancouver and the Fraser Valley.
+            Trusted by home and business owners across Surrey and the Fraser Valley.
           </h2>
           <QuoteForm heading="Get your free quote" />
         </section>

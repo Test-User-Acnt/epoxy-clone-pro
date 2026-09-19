@@ -41,8 +41,8 @@ const faqs = [
     a: "Pricing depends on square footage, slab condition, and the system you choose. We provide free on-site estimates so the quote reflects your actual floor.",
   },
   {
-    q: "Do you install epoxy flooring outside Vancouver?",
-    a: "We serve Metro Vancouver and the Fraser Valley, including Burnaby, Richmond, Surrey, Coquitlam, Langley, Abbotsford, and the North Shore.",
+    q: "Do you install epoxy flooring outside Surrey, BC?",
+    a: "We serve Surrey, BC and the Fraser Valley, including Burnaby, Richmond, Coquitlam, Langley, Delta, White Rock, and Abbotsford.",
   },
 ];
 
@@ -50,42 +50,47 @@ export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Epoxy Flooring Vancouver | Garage & Shop Floors | Go2Epoxy" },
+      { title: "Epoxy Flooring Company in Surrey BC | Pacific Floors and Coatings" },
       {
         name: "description",
         content:
-          "Professional epoxy flooring installation in Vancouver and the Fraser Valley. Metallic, flake, solid, and clear coatings for garages, shops, and warehouses. Free estimates.",
+          "Professional epoxy flooring installation in Surrey, BC and the Fraser Valley. Metallic, flake, solid, and clear coatings for garages, shops, and warehouses.",
       },
-      { property: "og:title", content: "Epoxy Flooring Vancouver | Go2Epoxy" },
+      { property: "og:title", content: "Epoxy Flooring Company in Surrey BC | Pacific Floors and Coatings" },
       {
         property: "og:description",
         content:
-          "Metallic, flake, solid, and sealed concrete epoxy floors installed across Metro Vancouver. Free on-site estimates.",
+          "Metallic, flake, solid, and sealed concrete floors installed in Surrey, BC and the Fraser Valley. Free on-site estimates.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://epoxy-clone-pro.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://epoxy-clone-pro.lovable.app/" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "Go2Epoxy",
-          description: "Epoxy flooring and concrete coating contractor serving Metro Vancouver.",
-          telephone: "+1-778-707-7090",
-          email: "info@go2epoxy.com",
+          name: "Pacific Floors and Coatings",
+          description: "Epoxy flooring and concrete coating contractor serving Surrey, BC and the Fraser Valley.",
+          telephone: "+1-236-878-3386",
+          email: "pacificfloorsandcoatings@gmail.com",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "2870 Arbutus St",
-            addressLocality: "Vancouver",
+            streetAddress: "7304 138 Street",
+            addressLocality: "Surrey",
             addressRegion: "BC",
             postalCode: "V6J 3Y7",
             addressCountry: "CA",
           },
-          areaServed: "Metro Vancouver, British Columbia",
+          areaServed: "Surrey, British Columbia",
+          sameAs: [
+            "https://www.tiktok.com/@pacificfloorsandcoatings",
+            "https://www.instagram.com/pacificfloorsandcoatings",
+            "https://www.facebook.com/profile.php?id=61575485291064",
+          ],
           aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "30" },
         }),
       },
@@ -119,7 +124,7 @@ function Home() {
         <section className="relative min-h-[680px] overflow-hidden">
           <img
             src={hero}
-            alt="Metallic epoxy garage floor installed in Vancouver"
+            alt="Metallic epoxy garage floor installed in Surrey, BC"
             width={1600}
             height={1008}
             className="absolute inset-0 h-full w-full object-cover opacity-60"
@@ -129,12 +134,12 @@ function Home() {
             <div className="max-w-[610px]">
               <p className="eyebrow">5-star flooring transformations</p>
               <h1 className="mt-4 text-4xl font-black leading-[1.08] sm:text-[55px]">
-                Professional Epoxy Flooring Installation in Vancouver
+                Epoxy Flooring Company in Surrey BC
               </h1>
               <p className="mt-5 max-w-xl text-sm leading-6 text-muted-foreground">
-                Upgrade your space with a beautiful floor that's made to last. At Go2Epoxy we
+                Upgrade your space with a beautiful floor that's made to last. At Pacific Floors and Coatings we
                 deliver clean, durable coatings for garages, basements, showrooms, and industrial
-                spaces across Metro Vancouver and the Fraser Valley.
+                spaces across Surrey, BC and the Fraser Valley.
               </p>
                <ul className="mt-6 space-y-2 text-xs font-bold uppercase">
                  <li>◉&nbsp; 7+ years of experience</li>
@@ -229,10 +234,10 @@ function Home() {
             </Link>
           </div>
           <p className="mt-3 text-sm text-muted-foreground">
-            Rated {site.rating} on Google from customers across Metro Vancouver.
+            Rated {site.rating} on Google from customers across Surrey, BC and the Fraser Valley.
           </p>
           <div className="mt-8 grid items-center gap-10 md:grid-cols-[1fr_1fr]">
-            <img src={flake} alt="Completed Go2Epoxy garage floor" className="h-[330px] w-full rounded-md object-cover" loading="lazy" />
+            <img src={flake} alt="Completed Pacific Floors and Coatings garage floor" className="h-[330px] w-full rounded-md object-cover" loading="lazy" />
             <figure className="border-l border-primary/40 pl-8">
               <blockquote className="text-base leading-7 text-muted-foreground">“{secondReview.text}”</blockquote>
               <figcaption className="mt-5 text-sm font-bold">{secondReview.name}<span className="block text-xs font-normal text-muted-foreground">{secondReview.location}</span></figcaption>
@@ -258,19 +263,19 @@ function Home() {
         </section>
 
         <section className="relative overflow-hidden py-20">
-          <img src={installer} alt="Go2Epoxy crew serving Vancouver" className="absolute inset-0 h-full w-full object-cover opacity-15" loading="lazy" />
+          <img src={installer} alt="Pacific Floors and Coatings crew serving Surrey, BC" className="absolute inset-0 h-full w-full object-cover opacity-15" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
           <div className="relative mx-auto grid max-w-[1170px] gap-12 px-5 md:grid-cols-2">
             <div>
               <p className="eyebrow">Local service areas</p>
-              <h2 className="mt-3 text-3xl font-black sm:text-[36px]">Dedicated to Serving Vancouver Businesses and Families</h2>
+              <h2 className="mt-3 text-3xl font-black sm:text-[36px]">Dedicated to Serving Surrey Businesses and Families</h2>
               <ul className="mt-6 space-y-4 text-sm leading-6 text-muted-foreground">
                 <li><strong className="text-foreground">On-Site Consultations:</strong> Delivered commercial, industrial, and residential floor preparation guidance directly to your property.</li>
                 <li><strong className="text-foreground">Fully Equipped Service Crews:</strong> Supported by professional diamond grinders and dustless vacuums.</li>
-                <li><strong className="text-foreground">Comprehensive Regional Coverage:</strong> Offering transparent pricing throughout Metro Vancouver and the Fraser Valley.</li>
+                <li><strong className="text-foreground">Comprehensive Regional Coverage:</strong> Offering transparent pricing throughout Surrey, BC and the Fraser Valley.</li>
               </ul>
               <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-primary">
-                {['Vancouver','Burnaby','Coquitlam','Richmond','Surrey','Langley','Abbotsford'].map((area) => <span key={area}>{area}</span>)}
+                {['Surrey','Burnaby','Coquitlam','Richmond','Delta','Langley','Abbotsford'].map((area) => <span key={area}>{area}</span>)}
               </div>
             </div>
           </div>
