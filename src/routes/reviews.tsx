@@ -9,22 +9,22 @@ export const Route = createFileRoute("/reviews")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Customer Reviews | Go2Epoxy Vancouver Epoxy Flooring" },
+      { title: "Customer Reviews | Pacific Floors and Coatings Surrey BC" },
       {
         name: "description",
         content:
-          "Read real feedback from Metro Vancouver homeowners and businesses who chose Go2Epoxy for their epoxy floor installation.",
+          "Read feedback from Surrey and Fraser Valley homeowners and businesses who chose Pacific Floors and Coatings for epoxy flooring.",
       },
-      { property: "og:title", content: "Customer Reviews | Go2Epoxy" },
+      { property: "og:title", content: "Customer Reviews | Pacific Floors and Coatings" },
       {
         property: "og:description",
-        content: "5.0-rated epoxy flooring reviews from across Metro Vancouver.",
+        content: "5.0-rated epoxy flooring reviews from Surrey, BC and the Fraser Valley.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/reviews" },
+      { property: "og:url", content: "https://epoxy-clone-pro.lovable.app/reviews" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/reviews" }],
+    links: [{ rel: "canonical", href: "https://epoxy-clone-pro.lovable.app/reviews" }],
   }),
   component: Reviews,
 });
@@ -38,7 +38,7 @@ function Reviews() {
           <p className="eyebrow">Real results, real feedback</p>
           <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">Customer reviews</h1>
           <p className="mt-5 text-muted-foreground">
-            Feedback from Metro Vancouver homeowners and businesses who chose Go2Epoxy for their
+            Feedback from Surrey and Fraser Valley homeowners and businesses who chose Pacific Floors and Coatings for their
             floor upgrade. Rated {site.rating} on Google.
           </p>
         </section>
