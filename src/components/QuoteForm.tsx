@@ -27,7 +27,7 @@ export function QuoteForm({ heading = "Reach out for a Free Quote!" }: { heading
           </div>
           <div>
             <label className="eyebrow" htmlFor="qf-phone">Phone</label>
-            <input id="qf-phone" name="phone" type="tel" required placeholder="(778) 555-0123" className={`mt-1 ${field}`} />
+            <input id="qf-phone" name="phone" type="tel" required placeholder="(236) 555-0123" className={`mt-1 ${field}`} />
           </div>
           <div>
             <label className="eyebrow" htmlFor="qf-email">Email</label>
@@ -44,7 +44,7 @@ export function QuoteForm({ heading = "Reach out for a Free Quote!" }: { heading
             </select>
           </div>
           <p className="sm:col-span-2 text-[9px] leading-relaxed text-muted-foreground">
-            By submitting this form you agree that Go2Epoxy may contact you by phone, text or email
+            By submitting this form you agree that Pacific Floors and Coatings may contact you by phone, text or email
             about your request. Consent is not a condition of purchase.
           </p>
           <button
