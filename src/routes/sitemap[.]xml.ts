@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { getRouterInstance } from "@tanstack/react-start";
-import { services } from "@/lib/site";
+import { services, serviceAreas } from "@/lib/site";
 import {
   isSitemapRouteIncluded,
   sitemapPathForLocation,
@@ -29,6 +29,20 @@ export const Route = createFileRoute("/sitemap.xml")({
               hash: "",
             });
             const path = sitemapPathForLocation(router, location, slugRouteId);
+            if (path) entries.push({ path });
+          }
+        }
+
+        const areaRouteId = "/service-areas/$slug";
+        if (isSitemapRouteIncluded(router.routesById[areaRouteId])) {
+          for (const area of serviceAreas) {
+            const location = router.buildLocation({
+              to: "/service-areas/$slug",
+              params: { slug: area.slug },
+              search: () => ({}),
+              hash: "",
+            });
+            const path = sitemapPathForLocation(router, location, areaRouteId);
             if (path) entries.push({ path });
           }
         }

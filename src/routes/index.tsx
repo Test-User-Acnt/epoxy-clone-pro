@@ -4,7 +4,9 @@ import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
 import { CtaBand } from "@/components/CtaBand";
 import { services, site } from "@/lib/site";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { reviews } from "@/lib/reviews";
+import { googleReviewsQuery } from "@/lib/google-reviews.functions";
 import hero from "@/assets/hero-garage.jpg";
 import metallic from "@/assets/metallic-epoxy.jpg";
 import flake from "@/assets/flake-epoxy.jpg";
@@ -42,7 +44,7 @@ const faqs = [
   },
   {
     q: "Do you install epoxy flooring outside Surrey, BC?",
-    a: "We serve Surrey, BC and the Fraser Valley, including Burnaby, Richmond, Coquitlam, Langley, Delta, White Rock, and Abbotsford.",
+    a: "We serve Surrey, BC and Metro Vancouver, including Burnaby, Richmond, Coquitlam, Langley, Delta, White Rock, and Abbotsford.",
   },
 ];
 
@@ -54,13 +56,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Professional epoxy flooring installation in Surrey, BC and the Fraser Valley. Metallic, flake, solid, and clear coatings for garages, shops, and warehouses.",
+          "Professional epoxy flooring installation in Surrey, BC and Metro Vancouver. Metallic, flake, solid, and clear coatings for garages, shops, and warehouses.",
       },
       { property: "og:title", content: "Epoxy Flooring Company in Surrey BC | Pacific Floors and Coatings" },
       {
         property: "og:description",
         content:
-          "Metallic, flake, solid, and sealed concrete floors installed in Surrey, BC and the Fraser Valley. Free on-site estimates.",
+          "Metallic, flake, solid, and sealed concrete floors installed in Surrey, BC and Metro Vancouver. Free on-site estimates.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://epoxy-clone-pro.lovable.app/" },
@@ -74,7 +76,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           name: "Pacific Floors and Coatings",
-          description: "Epoxy flooring and concrete coating contractor serving Surrey, BC and the Fraser Valley.",
+          description: "Epoxy flooring and concrete coating contractor serving Surrey, BC and Metro Vancouver.",
           telephone: "+1-236-878-3386",
           email: "pacificfloorsandcoatings@gmail.com",
           address: {
@@ -108,12 +110,21 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
+  loader: ({ context }) => context.queryClient.ensureQueryData(googleReviewsQuery),
+  errorComponent: ({ error }) => (
+    <main className="mx-auto max-w-3xl px-4 py-24 text-center" role="alert">
+      {error.message}
+    </main>
+  ),
+  notFoundComponent: () => <main className="px-4 py-24 text-center">Page not found.</main>,
   component: Home,
 });
 
 function Home() {
-  const firstReview = reviews[0];
-  const secondReview = reviews[1];
+  const { data } = useSuspenseQuery(googleReviewsQuery);
+  const list = data.reviews.length > 0 ? data.reviews : reviews.map((r) => ({ ...r, relativeTime: r.location }));
+  const firstReview = list[0];
+  const secondReview = list[1];
 
   if (!firstReview || !secondReview) return null;
 
@@ -139,10 +150,10 @@ function Home() {
               <p className="mt-5 max-w-xl text-sm leading-6 text-muted-foreground">
                 Upgrade your space with a beautiful floor that's made to last. At Pacific Floors and Coatings we
                 deliver clean, durable coatings for garages, basements, showrooms, and industrial
-                spaces across Surrey, BC and the Fraser Valley.
+                spaces across Surrey, BC and Metro Vancouver.
               </p>
                <ul className="mt-6 space-y-2 text-xs font-bold uppercase">
-                 <li>◉&nbsp; 7+ years of experience</li>
+                 <li>◉&nbsp; 10+ years of experience</li>
                  <li>◉&nbsp; Fast, well-managed installations</li>
                  <li>◉&nbsp; Competitive warranty on every job</li>
               </ul>
@@ -234,7 +245,7 @@ function Home() {
             </Link>
           </div>
           <p className="mt-3 text-sm text-muted-foreground">
-            Rated {site.rating} on Google from customers across Surrey, BC and the Fraser Valley.
+            Rated {site.rating} on Google from customers across Surrey, BC and Metro Vancouver.
           </p>
           <div className="mt-8 grid items-center gap-10 md:grid-cols-[1fr_1fr]">
             <img src={flake} alt="Completed Pacific Floors and Coatings garage floor" className="h-[330px] w-full rounded-md object-cover" loading="lazy" />
@@ -272,7 +283,7 @@ function Home() {
               <ul className="mt-6 space-y-4 text-sm leading-6 text-muted-foreground">
                 <li><strong className="text-foreground">On-Site Consultations:</strong> Delivered commercial, industrial, and residential floor preparation guidance directly to your property.</li>
                 <li><strong className="text-foreground">Fully Equipped Service Crews:</strong> Supported by professional diamond grinders and dustless vacuums.</li>
-                <li><strong className="text-foreground">Comprehensive Regional Coverage:</strong> Offering transparent pricing throughout Surrey, BC and the Fraser Valley.</li>
+                <li><strong className="text-foreground">Comprehensive Regional Coverage:</strong> Offering transparent pricing throughout Surrey, BC and Metro Vancouver.</li>
               </ul>
               <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-primary">
                 {['Surrey','Burnaby','Coquitlam','Richmond','Delta','Langley','Abbotsford'].map((area) => <span key={area}>{area}</span>)}

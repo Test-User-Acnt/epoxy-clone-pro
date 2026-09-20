@@ -23,12 +23,12 @@ export const Route = createFileRoute("/services/")({
       {
         name: "description",
         content:
-          "Metallic, flake, solid, and clear epoxy flooring systems for garages, warehouses, and showrooms across Surrey, BC and the Fraser Valley.",
+          "Metallic, flake, solid, and clear epoxy flooring systems for garages, warehouses, and showrooms across Surrey, BC and Metro Vancouver.",
       },
       { property: "og:title", content: "Epoxy Flooring Services | Pacific Floors and Coatings" },
       {
         property: "og:description",
-        content: "Your go-to custom flooring solutions across Surrey, BC and the Fraser Valley.",
+        content: "Your go-to custom flooring solutions across Surrey, BC and Metro Vancouver.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://epoxy-clone-pro.lovable.app/services" },
@@ -82,7 +82,7 @@ function ServicesPage() {
 
         <section className="mx-auto grid max-w-6xl gap-8 px-4 pb-20 md:grid-cols-2">
           <h2 className="text-3xl font-extrabold">
-            Trusted by home and business owners across Surrey and the Fraser Valley.
+            Trusted by home and business owners across Surrey and Metro Vancouver.
           </h2>
           <QuoteForm heading="Get your free quote" />
         </section>
