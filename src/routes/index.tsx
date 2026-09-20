@@ -108,12 +108,21 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
+  loader: ({ context }) => context.queryClient.ensureQueryData(googleReviewsQuery),
+  errorComponent: ({ error }) => (
+    <main className="mx-auto max-w-3xl px-4 py-24 text-center" role="alert">
+      {error.message}
+    </main>
+  ),
+  notFoundComponent: () => <main className="px-4 py-24 text-center">Page not found.</main>,
   component: Home,
 });
 
 function Home() {
-  const firstReview = reviews[0];
-  const secondReview = reviews[1];
+  const { data } = useSuspenseQuery(googleReviewsQuery);
+  const list = data.reviews.length > 0 ? data.reviews : reviews.map((r) => ({ ...r, relativeTime: r.location }));
+  const firstReview = list[0];
+  const secondReview = list[1];
 
   if (!firstReview || !secondReview) return null;
 
