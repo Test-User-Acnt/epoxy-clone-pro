@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { getRouterInstance } from "@tanstack/react-start";
-import { services } from "@/lib/site";
+import { services, serviceAreas } from "@/lib/site";
 import {
   isSitemapRouteIncluded,
   sitemapPathForLocation,
