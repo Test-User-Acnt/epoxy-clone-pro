@@ -7,7 +7,7 @@ export type GoogleReview = {
   text: string;
   rating: number;
   relativeTime: string;
-  profilePhoto?: string;
+  profilePhoto?: string | undefined;
 };
 
 export type GoogleReviewsResult = {
