@@ -33,6 +33,20 @@ export const Route = createFileRoute("/sitemap.xml")({
           }
         }
 
+        const areaRouteId = "/service-areas/$slug";
+        if (isSitemapRouteIncluded(router.routesById[areaRouteId])) {
+          for (const area of serviceAreas) {
+            const location = router.buildLocation({
+              to: "/service-areas/$slug",
+              params: { slug: area.slug },
+              search: () => ({}),
+              hash: "",
+            });
+            const path = sitemapPathForLocation(router, location, areaRouteId);
+            if (path) entries.push({ path });
+          }
+        }
+
         if (entries.length === 0) {
           return new Response("No pages are included in this sitemap.", {
             status: 404,
