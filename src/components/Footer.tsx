@@ -48,7 +48,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-5 text-center text-[10px] text-muted-foreground">
-        © {new Date().getFullYear()} {site.name}. Proudly serving Surrey, BC and the Fraser Valley.
+        © {new Date().getFullYear()} {site.name}. Proudly serving Surrey, BC and Metro Vancouver.
       </div>
     </footer>
   );

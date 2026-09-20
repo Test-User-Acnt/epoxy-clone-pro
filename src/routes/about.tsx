@@ -13,7 +13,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Pacific Floors and Coatings provides premium epoxy flooring and concrete coating for homeowners and businesses across Surrey, BC and the Fraser Valley.",
+          "Pacific Floors and Coatings provides premium epoxy flooring and concrete coating for homeowners and businesses across Surrey, BC and Metro Vancouver.",
       },
       { property: "og:title", content: "About Pacific Floors and Coatings" },
       {
@@ -41,7 +41,7 @@ function About() {
           </h1>
           <p className="mt-5 text-muted-foreground">
             We provide epoxy flooring and concrete coating services for homeowners and businesses
-            across Surrey, BC and the Fraser Valley. Built on quality work and clear
+            across Surrey, BC and Metro Vancouver. Built on quality work and clear
             communication, we make upgrading your floors a stress-free experience.
           </p>
         </section>
@@ -109,7 +109,7 @@ function About() {
           <div>
             <h2 className="text-3xl font-extrabold">Ready to get started? Let's talk about your project.</h2>
             <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-              <li>7+ years of epoxy experience</li>
+              <li>10+ years of epoxy experience</li>
               <li>Free on-site estimates</li>
               <li>5.0 Google rating</li>
             </ul>

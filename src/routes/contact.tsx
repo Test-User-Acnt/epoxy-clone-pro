@@ -17,7 +17,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact Pacific Floors and Coatings" },
       {
         property: "og:description",
-        content: "Free on-site epoxy flooring estimates in Surrey, BC and the Fraser Valley.",
+        content: "Free on-site epoxy flooring estimates in Surrey, BC and Metro Vancouver.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://epoxy-clone-pro.lovable.app/contact" },
@@ -39,7 +39,7 @@ function Contact() {
             <h1 className="mt-3 text-4xl font-extrabold">Let's talk about your floor</h1>
             <p className="mt-5 text-muted-foreground">
               Tell us a bit about the space and we'll arrange a free on-site estimate anywhere in
-              Surrey, BC or the Fraser Valley.
+              Surrey, BC or Metro Vancouver.
             </p>
             <ul className="mt-8 space-y-3 text-sm">
               <li>
