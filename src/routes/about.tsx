@@ -58,7 +58,7 @@ function About() {
           <div className="panel p-7">
             <h2 className="text-xl font-bold">Who we are</h2>
             <p className="mt-4 text-sm text-muted-foreground">
-              With over seven years of combined experience across our installation team, we deliver
+              With over ten years of combined experience across our installation team, we deliver
               clean, durable, professionally finished floors with a strong focus on surface
               preparation, attention to detail, and long-term performance.
             </p>
