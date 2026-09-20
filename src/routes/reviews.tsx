@@ -1,16 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
-import { getGoogleReviews } from "@/lib/google-reviews.functions";
+import { googleReviewsQuery } from "@/lib/google-reviews.functions";
 import { site } from "@/lib/site";
-
-export const googleReviewsQuery = queryOptions({
-  queryKey: ["google-reviews"],
-  queryFn: () => getGoogleReviews(),
-  staleTime: 1000 * 60 * 60,
-});
 
 export const Route = createFileRoute("/reviews")({
   staticData: { sitemap: true },

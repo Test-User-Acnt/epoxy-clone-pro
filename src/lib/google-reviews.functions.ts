@@ -1,3 +1,4 @@
+import { queryOptions } from "@tanstack/react-query";
 import { createServerFn } from "@tanstack/react-start";
 import { site } from "@/lib/site";
 
@@ -83,3 +84,9 @@ export const getGoogleReviews = createServerFn({ method: "GET" }).handler(
     }
   },
 );
+
+export const googleReviewsQuery = queryOptions({
+  queryKey: ["google-reviews"],
+  queryFn: () => getGoogleReviews(),
+  staleTime: 1000 * 60 * 60,
+});
